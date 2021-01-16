@@ -1,3 +1,72 @@
+header {
+  background: #808080;
+}
 
+nav {
+  background: #313131;
+}
+
+h1 {
+  font-weight: lighter;
+}
+
+.icon {
+  width: 40px;
+}
+
+.avatar {
+  border-radius: 50%;
+}
+
+.notification img {
+  height: 50px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: yellow;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 70px 70px 1fr;
+  grid-template-areas: "header" "nav" "main";
+}
+
+header {
+  grid-area: header;
+}
+
+nav {
+  grid-area: nav;
+}
+
+main {
+  grid-area: main;
+}
+
+header {
+  height: 70px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 5px 10px;
+  align-items: center;
+  border: 1px solid red;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+}
+.header-container :first-child {
+  margin-right: 5px;
+}
+.header-container :last-child {
+  margin-left: 15px;
+}
 
 /*# sourceMappingURL=style.css.map */
