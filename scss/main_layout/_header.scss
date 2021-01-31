@@ -1,13 +1,12 @@
 
 header {
+    background: $color-secondary-darker;
     height: 70px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding: 5px 10px;
     align-items: center;
-
-    border: 1px solid red;
 }
 
 .header-container {

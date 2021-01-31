@@ -1,0 +1,15 @@
+select option{
+    line-height: 2;
+}
+
+.settings-button {
+    
+    display: flex;
+    justify-content: space-between;
+
+    & button{
+        flex-grow: 1;
+        margin: 10px;
+    }
+
+}

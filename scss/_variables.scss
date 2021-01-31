@@ -1,0 +1,30 @@
+$grey: #808080;
+$blue: #7477BF; //blue slate
+
+
+
+$lighter: 15%;
+$darker:  15%;
+$light:   25%;
+$dark:    25%;
+$Vdark:   35%;
+
+
+$color-primary: $grey;
+$color-primary-lighter: lighten($color-primary, $lighter);
+$color-primary-light: lighten($color-primary, $light);
+$color-primary-dark: darken($color-primary, $dark);
+$color-primary-Vdark: darken($color-primary, $Vdark);
+
+$color-secondary: $blue;
+$color-secondary-lighter: lighten($color-secondary, $lighter);
+$color-secondary-darker: darken($color-secondary, $darker);
+$color-secondary-dark: darken($color-secondary, $dark);
+$color-secondary-Vdark: darken($color-secondary, $Vdark);
+
+
+
+
+
+
+

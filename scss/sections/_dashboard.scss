@@ -1,0 +1,43 @@
+.dashboard{
+    padding-right: 0px; 
+}
+
+.main-header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+    //border: 1px solid blue;
+    
+    .headline{
+        margin: auto 10px auto 20px;
+ }
+}
+
+.main-header-search{
+    background: $color-primary;
+    height: 70px;
+    flex-grow: 1;
+    //border: solid red 1px;
+    display: flex;
+    align-items: center;
+    border-bottom-left-radius: 8px;
+    justify-content: flex-end;
+
+
+    input{
+        margin-right: 10px;
+    }
+
+
+}
+
+.alert{
+    background: $color-primary;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+}
+

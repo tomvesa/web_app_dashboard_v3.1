@@ -1,0 +1,21 @@
+.message,
+.settings {
+    display: flex;
+    flex-direction: column;
+}
+
+.widget-container {
+    margin: 0 10px;
+    padding: 10px
+}
+
+.form-field,
+.form-area {
+    font-size: 1.2rem;
+    margin: 10px;
+}
+
+#send {
+    margin: 10px;
+}
+
