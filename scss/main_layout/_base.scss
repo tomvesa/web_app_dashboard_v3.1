@@ -1,3 +1,16 @@
+//  *****Base
+
+*{
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+    min-width: 320px;
+}
+
+
+
 h1 {
     font-weight: lighter;
 }
@@ -12,8 +25,9 @@ p {
     letter-spacing: 1px;
 }
 section {
+    max-width: 90vw;
     margin-top: 20px;
-    padding: 0 10px;
+    padding: 0 0px;
 }
 
 section:first-of-type {
@@ -46,7 +60,7 @@ option  {
     font-size: 22px;
     font-weight: 600;
     letter-spacing: 3px;
-    color: $color-primary-Vdark;
+    color: white;
 
     &:hover{
         background: $color-primary-light;

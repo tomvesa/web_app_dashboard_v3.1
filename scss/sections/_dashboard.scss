@@ -16,9 +16,9 @@
 }
 
 .main-header-search{
-    background: $color-primary;
+    background: $color-primary-Vlight;
     height: 70px;
-    flex-grow: 1;
+    flex-grow: .9;
     //border: solid red 1px;
     display: flex;
     align-items: center;
@@ -34,10 +34,22 @@
 }
 
 .alert{
-    background: $color-primary;
+    background: $color-secondary-darker;
     margin: 10px;
-    padding: 5px;
+    padding: 8px 15px;
     border-radius: 5px;
     color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    & p {
+        margin: unset;
+    }
+}
+
+#close-icon {
+    height: 15px;
+    
 }
 

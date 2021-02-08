@@ -1,15 +1,14 @@
-*{
-    box-sizing: border-box;
-}
 
-body{
+body
+{
     //background: yellow;
     margin: 0;   
     display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: 70px 70px 1fr;
+    grid-template-columns: minmax(300px,1fr);
+    grid-template-rows: 70px 70px 120px 1fr;
     grid-template-areas: "header"
                          "nav"
+                         "dashboard"
                          "main";
 
 }
@@ -25,6 +24,12 @@ nav{
 
 main {
     grid-area: main;
+    justify-self: center;
+    margin-bottom: 50px;
+}
+
+.dashboard-wrapper {
+    grid-area: dashboard;
 }
 
 
