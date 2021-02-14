@@ -106,7 +106,7 @@ body {
   margin: 0;
   display: grid;
   grid-template-columns: minmax(300px, 1fr);
-  grid-template-rows: 70px 70px 120px 1fr;
+  grid-template-rows: 70px 70px auto 1fr;
   grid-template-areas: "header" "nav" "dashboard" "main";
 }
 
@@ -148,6 +148,22 @@ header {
 }
 .header-container :last-child {
   margin-left: 15px;
+}
+
+.notification {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin-right: 20px;
+}
+
+.notification-icon {
+  width: 7px;
+  background: #65ff04;
+  height: 7px;
+  z-index: 1;
+  position: absolute;
+  border-radius: 50%;
 }
 
 .dashboard {
@@ -192,7 +208,7 @@ header {
   margin: unset;
 }
 
-#close-icon {
+.close-icon {
   height: 15px;
 }
 
@@ -403,7 +419,7 @@ select option {
     margin: 0;
     display: grid;
     grid-template-columns: minmax(100px, 150px) minmax(70px, 1fr);
-    grid-template-rows: 70px 150px 1fr;
+    grid-template-rows: 70px auto 1fr;
     grid-template-areas: "nav header" "nav dashboard" "nav main";
   }
 
