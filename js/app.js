@@ -102,3 +102,15 @@ let mobileChart = new Chart(mobileCanvas, {
 
 //style select option element
 
+
+
+//******  hide alert messag when clicked */
+const alertBox = document.querySelector('#alert-box');
+
+alertBox.addEventListener('click', e => {
+    if(e.target.className === 'close-icon'){   
+       let parentEl = e.target.parentElement; 
+        
+            parentEl.style.display = "none";
+    }
+})
