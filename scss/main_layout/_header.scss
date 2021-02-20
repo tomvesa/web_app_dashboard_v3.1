@@ -31,14 +31,22 @@ header {
     justify-content: center;
     position: relative;
     margin-right: 20px;
+    transition: scale 2.5s linear .8s;
 }
+
+.notification:hover {
+        transform: scale(1.3);
+    }
+
 
 .notification-icon {
     width: 7px;
-    background: #65ff04;
+    background: $color-signal;
     height: 7px;
     z-index: 1;
     position: absolute;
     border-radius: 50%;
+    
+
 }
     

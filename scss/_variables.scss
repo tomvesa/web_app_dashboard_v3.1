@@ -1,6 +1,7 @@
 $grey: #949494fd;
 ;
 $blue: #7477BF; //blue slate
+$green: #65ff04;
 
 
 
@@ -18,6 +19,8 @@ $color-primary-light: lighten($color-primary, $light);
 $color-primary-Vlight: lighten($color-primary, $Vlight);
 $color-primary-dark: darken($color-primary, $dark);
 $color-primary-Vdark: darken($color-primary, $Vdark);
+$color-signal: $green;
+$color-signal-darker: darken($color-signal, $darker);
 
 
 $color-secondary: $blue;

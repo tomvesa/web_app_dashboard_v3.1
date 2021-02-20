@@ -1,16 +1,43 @@
 
 
 //*****     Line Graph trafic */
-
+//**** weekly chart */
 let trafficCanvas = document.querySelector(`#traffic-chart`);
 
 let trafficData = {
-        labels: ['16-22', '23-29', '30-5', '6-12', '13-19', '20-26', '27-3', '4-10', '11-17', '18-24', '25-31'],
-        datasets:[{
-            data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500, 2500],
-            backgroundColor: 'rgba(116, 119, 191, 0.3)',
-            borderWidth: 1,
-        }]
+        weekly: {
+            labels: ['16-22', '23-29', '30-5', '6-12', '13-19', '20-26', '27-3', '4-10', '11-17', '18-24', '25-31'],
+            datasets:[{
+                data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500, 2500],
+                backgroundColor: 'rgba(116, 119, 191, 0.3)',
+                borderWidth: 1,
+                }]
+            },
+        monthly: {
+            labels: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan'],
+            datasets:[{
+                data: [2451, 3545, 6661, 1452, 2556, 3458, 3459, 4681, 2454, 4681, 5001, 1566],
+                backgroundColor: 'rgba(116, 119, 191, 0.3)',
+                borderWidth: 1,
+                }]
+            },    
+        daily: {
+            labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+            datasets:[{
+                data: [157, 168, 102, 97, 126, 90, 75],
+                backgroundColor: 'rgba(116, 119, 191, 0.3)',
+                borderWidth: 1,
+            }]
+        },
+        hourly: {
+            labels: [7,8,9,10,11,12,13,14,15,16,17,18,19,20],
+            datasets:[{
+                data: [23, 15, 10, 17, 19, 21, 24, 27, 25, 26, 23, 20, 21, 18],
+                backgroundColor: 'rgba(116, 119, 191, 0.3)',
+                borderWidth: 1,
+            }]
+        },
+
 }
 
 let trafficOptions = {
@@ -30,9 +57,9 @@ let trafficOptions = {
     }
 }
 
-let trafficChart = new Chart(trafficCanvas, {
+var trafficChart = new Chart(trafficCanvas, {
     type: 'line',
-    data: trafficData,
+    data: trafficData.weekly,
     options: trafficOptions
     });
     
@@ -112,5 +139,37 @@ alertBox.addEventListener('click', e => {
        let parentEl = e.target.parentElement; 
         
             parentEl.style.display = "none";
+            
     }
 })
+
+
+//********* Trafic switch charts */
+//Select Navigation div
+const traficNav = document.querySelector('.trafic-nav');
+// Add event listener to the div and store target in a variable to lowerCase
+traficNav.addEventListener('click', e => {
+    if(e.target.className.indexOf('traffic-nav-item') > -1){
+        
+        let selectedNavItem = e.target.textContent
+                            .toLowerCase();
+        //console.log(selectedNavItem);
+        console.log(e.target.classList);
+        // Remove existing green background and place it to a targe
+        traficNav.querySelector('.selected').classList.remove('selected');
+        e.target.classList.add('selected');
+
+        let text = `trafficData.${selectedNavItem}`;
+        //console.log(trafficChart.data);
+
+        trafficChart = new Chart(trafficCanvas, {
+            type: 'line',
+            data: `trafficData.${selectedNavItem}`,
+            options: trafficOptions,
+            });
+
+
+    }
+});
+
+// display the correct chart with target variable
