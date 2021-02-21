@@ -179,8 +179,9 @@ header {
 .notifications {
   position: absolute;
   width: 250px;
+  top: 50px;
+  left: -150px;
   max-width: 450px;
-  left: -270px;
   background: rgba(237, 237, 237, 0.9921568627);
   opacity: 0.97;
   box-shadow: 3px 10px 15px -3px #949494fd;
@@ -441,6 +442,10 @@ select option {
 @media only screen and (min-width: 768px) {
   main {
     width: 100vw;
+  }
+
+  .notifications {
+    left: -260px;
   }
 
   .dashboard input {
