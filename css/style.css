@@ -16,7 +16,7 @@ a {
   color: #7477BF;
 }
 
-p {
+p, label {
   font-size: 1.2rem;
   letter-spacing: 1px;
 }
@@ -88,6 +88,7 @@ option {
 .settings label {
   display: flex;
   justify-content: space-around;
+  align-items: center;
 }
 
 .button-switch {
@@ -130,7 +131,7 @@ main {
 
 header {
   background: #a8aad7;
-  flex-grow: 1fr;
+  flex-grow: 1;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -148,6 +149,10 @@ header {
 }
 .header-container :last-child {
   margin-left: 15px;
+}
+
+.notification-container {
+  position: relative;
 }
 
 .notification {
@@ -169,6 +174,39 @@ header {
   z-index: 1;
   position: absolute;
   border-radius: 50%;
+}
+
+.notifications {
+  position: absolute;
+  width: 250px;
+  max-width: 450px;
+  left: -270px;
+  background: rgba(237, 237, 237, 0.9921568627);
+  opacity: 0.97;
+  box-shadow: 3px 10px 15px -3px #949494fd;
+}
+.notifications :last-child {
+  margin-left: initial;
+}
+.notifications :first-child {
+  margin-right: initial;
+}
+
+.notification-item {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3px 10px;
+  border-bottom: 1px solid #949494fd;
+}
+
+.notification-item .close-icon {
+  background: #494c9e;
+  border-radius: 3px;
+  padding: 1px;
+}
+.notification-item .close-icon:hover {
+  background: rgba(59, 59, 59, 0.9921568627);
 }
 
 .dashboard {
@@ -218,7 +256,7 @@ header {
 }
 
 .message,
-.settings {
+.settings .user-input-wrapper {
   display: flex;
   flex-direction: column;
 }
@@ -236,6 +274,35 @@ header {
 
 #send {
   margin: 10px;
+}
+
+#message form {
+  position: relative;
+}
+
+#member-options {
+  position: absolute;
+  top: 80px;
+  left: 20px;
+  width: 300px;
+  background-color: rgba(237, 237, 237, 0.9921568627);
+  box-shadow: 3px 10px 15px -3px #949494fd;
+}
+
+.members-item {
+  font-size: 1.2em;
+  padding: 10px 20px;
+  border-bottom: 1px solid #949494fd;
+}
+.members-item:last-child {
+  border-bottom: none;
+}
+.members-item:hover {
+  color: #7477BF;
+}
+
+.user-input-wrapper {
+  width: auto;
 }
 
 nav {

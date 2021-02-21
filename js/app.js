@@ -144,17 +144,31 @@ let mobileChart = new Chart(mobileCanvas, {
 
 
 
-//******  hide alert messag when clicked */
-const alertBox = document.querySelector('#alert-box');
 
-alertBox.addEventListener('click', e => {
-    if(e.target.className === 'close-icon'){   
-       let parentEl = e.target.parentElement; 
+
+//******  hide alert message when clicked */
+const alertBox = document.querySelector('#alert-box');
+const notifications = document.querySelector('#notification-box');
+const closeArr = [alertBox, notifications];
+
+closeArr.forEach(item => {
+    item.addEventListener('click', e => {
+        if(e.target.className === 'close-icon'){   
+            let parentEl = e.target.parentElement; 
         
             parentEl.style.display = "none";
             
     }
-})
+})}
+);
+
+//************** display notification
+const bell = document.querySelector(".notification");
+const notifItems = document.querySelectorAll(".notification-item")
+bell.addEventListener('click', ()=>{
+    notifItems.forEach(item => {item.style.display = "flex";})
+});
+
 
 
 //********* Trafic switch charts */
@@ -188,3 +202,121 @@ function replacedata(selection){
 }
 
 
+
+const userF = document.querySelector('#user-field');
+const messageF = document.querySelector('#messageField');
+const sendBtn = document.querySelector('#send');
+
+sendBtn.addEventListener('click', e =>{
+    let user = userF.value;
+    let message = messageF.value;
+
+    if(user && message){
+        
+        sessionStorage.setItem('messageSent', true);
+    } else {
+        
+        e.preventDefault();
+        switch(!user || !message){
+        case (!user && !message) :
+              alert(`User and Message field are empty`);
+              break;
+        case !user:
+              alert(`User field is empty`);
+            break;  
+        case !message:
+            alert(`Message field is empty`);
+            break;    
+
+
+        }
+
+    }
+});
+
+//**** display message was sent after clicking the send button */
+window.addEventListener('load', () =>{
+    if(sessionStorage.messageSent && sessionStorage.messageSent == "true"){
+        alert('Your message has been sent');
+        sessionStorage.removeItem('messageSent');
+    }
+})
+
+
+// ****** settings
+let emailNotif = document.querySelector('#email-notifications input');
+let profile = document.querySelector('#profile-settings input')
+let timeZone = document.querySelector('#timezone');
+let saveBtn = document.querySelector('#save')
+
+saveBtn.addEventListener('click', ()=>{
+;
+
+    localStorage.setItem('profileSettings', profile.checked);
+    localStorage.setItem('emailNotification', emailNotif.checked);
+    localStorage.setItem('timeZone', timeZone.value );
+    console.log(localStorage);
+
+})
+
+
+window.addEventListener('load', () =>{
+    emailNotif.checked = JSON.parse(localStorage.emailNotification);
+    profile.checked = JSON.parse(localStorage.profileSettings);
+    timeZone.value = localStorage.timeZone;
+
+    });
+
+
+//******** Search Autocomplete */
+let memberlist = [...document.querySelectorAll(".members .members-text p")];
+let members = memberlist.map(item => item.innerText);
+let memberOptionBox = document.querySelector('#member-options');
+let memberOptionList = document.createElement('ul');
+let messageBox = document.querySelector('#message form');
+
+//memberOptionList.classList.add('members-item');
+
+
+//memberOptionBox.appendChild(memberOptionList);
+for(i= 0; i < members.length ; i++){
+    listItem = document.createElement('li');
+    listItem.innerText = members[i];
+    listItem.classList.add('members-item');
+    listItem.style.display = "none";
+    memberOptionList.appendChild(listItem);
+    console.log(listItem);
+
+}
+
+memberOptionBox.appendChild(memberOptionList);
+let membersLI = document.querySelectorAll('.members-item');
+
+userF.addEventListener("input", () => {
+     let text = userF.value.toLowerCase();
+     let membersLI = document.querySelectorAll('.members-item');
+    
+     membersLI.forEach(item => {
+        if(userF.value == ""){
+            membersLI.forEach(item => item.style.display = "none");
+        } else if (item.innerText.indexOf(text) < 0 ){
+         item.style.display = 'none';
+     } else if(item.innerText.indexOf(text) > -1){
+         item.style.display = 'list-item';
+     }} 
+ )});
+
+ const selectionBox = document.querySelector('#member-options');
+selectionBox.addEventListener('click', (e) => {
+        let target = e.target;
+        if(e.target.tagName == "LI"){
+        userF.value = target.innerText;
+        membersLI.forEach(item => item.style.display = "none")
+        }
+    }) ;
+
+
+ 
+
+
+    

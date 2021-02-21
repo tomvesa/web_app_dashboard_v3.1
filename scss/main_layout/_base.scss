@@ -20,7 +20,7 @@ a {
     color: $color-secondary;
 }
 
-p {
+p, label {
     font-size: 1.2rem;
     letter-spacing: 1px;
 }
@@ -97,6 +97,7 @@ option  {
 .settings label {
     display: flex;
     justify-content: space-around;
+    align-items: center;
 }
 
 .button-switch {

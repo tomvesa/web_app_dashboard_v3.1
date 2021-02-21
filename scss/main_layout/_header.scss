@@ -1,7 +1,7 @@
 
 header {
     background: $color-secondary-lighter;
-    flex-grow: 1fr;
+    flex-grow: 1;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -25,6 +25,9 @@ header {
     }
 
 }
+.notification-container{
+    position: relative;
+}
 
 .notification {
     display: flex;
@@ -46,7 +49,40 @@ header {
     z-index: 1;
     position: absolute;
     border-radius: 50%;
-    
-
 }
+
+.notifications {
+    position: absolute;
+    width: 250px;
+    max-width: 450px;
+    left: -270px;
+    background: $color-primary-Vlight;
+    opacity: .97;
+    box-shadow: 3px 10px 15px -3px $color-primary;
+
+    :last-child{
+        margin-left:initial;
+    }
+    :first-child{
+        margin-right: initial;
+    }
+}
+
+.notification-item{
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3px 10px;
+    border-bottom: 1px solid $color-primary;
+}
+
+.notification-item .close-icon {
+    background: $color-secondary-darker;
+    border-radius: 3px;
+    padding: 1px;
+
+    &:hover{
+        background: $color-primary-Vdark;
+    }
+} 
     
