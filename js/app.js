@@ -12,7 +12,7 @@ let trafficData = {
                 backgroundColor: 'rgba(116, 119, 191, 0.3)',
                 borderWidth: 1,
                 }]
-            }
+            };
         
 let traficDataUpd = {        
         monthly: {
@@ -51,7 +51,7 @@ let traficDataUpd = {
             }]
         },
 
-}
+};
 
 let trafficOptions = {
     aspectRation: 2.5,
@@ -68,7 +68,7 @@ let trafficOptions = {
     legend :{
         display: false,
     }
-}
+};
 
 var trafficChart = new Chart(trafficCanvas, {
     type: 'line',
@@ -79,7 +79,7 @@ var trafficChart = new Chart(trafficCanvas, {
 
 // daily trafic 
 // bar chart
-const dailyCanvas = document.querySelector("#daily-trafic")
+const dailyCanvas = document.querySelector("#daily-trafic");
 
 const dailyData = {
     labels: ['Mo','Tu','We','Th','Fr','Sa','Su'],
@@ -102,7 +102,7 @@ const dailyOptions = {
     legend: {
         display: false,
     }
-}
+};
 
 let dailyChart = new Chart(dailyCanvas, {
     type: 'bar',
@@ -122,7 +122,7 @@ const mobileUsers = {
         borderWidth: 1,
 
     }]
-}
+};
 
 const mobileOptions = {
     legend: {
@@ -159,12 +159,13 @@ closeArr.forEach(item => {
             parentEl.style.display = "none";
             
     }
-})}
+});
+}
 );
 
 //************** display notification
 const bell = document.querySelector(".notification");
-const notifItems = document.querySelectorAll(".notification-item")
+const notifItems = document.querySelectorAll(".notification-item");
 bell.addEventListener('click', ()=>{
     notifItems.forEach(item => {item.style.display = "flex";})
 });
@@ -231,7 +232,7 @@ sendBtn.addEventListener('click', e =>{
 
         }
 
-    }
+    };
 });
 
 //**** display message was sent after clicking the send button */
