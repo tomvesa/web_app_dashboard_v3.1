@@ -5,14 +5,16 @@
 let trafficCanvas = document.querySelector(`#traffic-chart`);
 
 let trafficData = {
-        weekly: {
+        
             labels: ['16-22', '23-29', '30-5', '6-12', '13-19', '20-26', '27-3', '4-10', '11-17', '18-24', '25-31'],
             datasets:[{
                 data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500, 2500],
                 backgroundColor: 'rgba(116, 119, 191, 0.3)',
                 borderWidth: 1,
                 }]
-            },
+            }
+        
+let traficDataUpd = {        
         monthly: {
             labels: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan'],
             datasets:[{
@@ -20,7 +22,18 @@ let trafficData = {
                 backgroundColor: 'rgba(116, 119, 191, 0.3)',
                 borderWidth: 1,
                 }]
-            },    
+            }, 
+            
+        weekly: {
+            labels: ['16-22', '23-29', '30-5', '6-12', '13-19', '20-26', '27-3', '4-10', '11-17', '18-24', '25-31'],
+            datasets:[{
+                data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500, 2500],
+                backgroundColor: 'rgba(116, 119, 191, 0.3)',
+                borderWidth: 1,
+                }]
+        },    
+
+
         daily: {
             labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
             datasets:[{
@@ -59,7 +72,7 @@ let trafficOptions = {
 
 var trafficChart = new Chart(trafficCanvas, {
     type: 'line',
-    data: trafficData.weekly,
+    data: trafficData,
     options: trafficOptions
     });
     
@@ -153,23 +166,25 @@ traficNav.addEventListener('click', e => {
         
         let selectedNavItem = e.target.textContent
                             .toLowerCase();
-        //console.log(selectedNavItem);
+ 
         console.log(e.target.classList);
         // Remove existing green background and place it to a targe
         traficNav.querySelector('.selected').classList.remove('selected');
         e.target.classList.add('selected');
 
-        let text = `trafficData.${selectedNavItem}`;
-        //console.log(trafficChart.data);
-
-        trafficChart = new Chart(trafficCanvas, {
-            type: 'line',
-            data: `trafficData.${selectedNavItem}`,
-            options: trafficOptions,
-            });
-
-
+// display the correct chart with target variable         
+       replacedata( selectedNavItem);
+        
     }
-});
+}); 
 
-// display the correct chart with target variable
+
+
+function replacedata(selection){
+    //replace data in the chart
+    trafficData.labels = traficDataUpd[selection].labels;
+    trafficData.datasets = traficDataUpd[selection].datasets;
+    trafficChart.update();
+}
+
+
