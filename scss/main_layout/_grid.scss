@@ -5,7 +5,7 @@ body
     margin: 0;   
     display: grid;
     grid-template-columns: minmax(300px,1fr);
-    grid-template-rows: 70px 70px auto 1fr;
+    grid-template-rows: 70px auto auto 1fr;
     grid-template-areas: "header"
                          "nav"
                          "dashboard"

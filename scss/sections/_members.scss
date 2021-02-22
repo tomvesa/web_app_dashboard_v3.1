@@ -2,6 +2,7 @@
     border-bottom: 1px dashed $color-primary;
     padding: 15px 5px;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     
     & p {
@@ -9,19 +10,24 @@
 
     }
 
-    a {
+    & a {
         font-size: 1.1rem;
+    }
+
+    & .profile-image{
+        margin-right: 15px;
     }
 }
 
 .text-wrapper{
     flex-grow: 1;
-    margin-left: 15px;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;   
    
 }
+
+
 
 .members-text {
    

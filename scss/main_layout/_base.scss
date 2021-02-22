@@ -25,9 +25,9 @@ p, label {
     letter-spacing: 1px;
 }
 section {
-    max-width: 90vw;
+    max-width: 97vw;
     margin-top: 20px;
-    padding: 0 0px;
+    padding: 10px;
 }
 
 section:first-of-type {
@@ -96,8 +96,10 @@ option  {
 
 .settings label {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
+
 }
 
 .button-switch {

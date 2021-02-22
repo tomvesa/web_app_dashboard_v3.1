@@ -22,9 +22,9 @@ p, label {
 }
 
 section {
-  max-width: 90vw;
+  max-width: 97vw;
   margin-top: 20px;
-  padding: 0 0px;
+  padding: 10px;
 }
 
 section:first-of-type {
@@ -87,6 +87,7 @@ option {
 
 .settings label {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
 }
@@ -107,7 +108,7 @@ body {
   margin: 0;
   display: grid;
   grid-template-columns: minmax(300px, 1fr);
-  grid-template-rows: 70px 70px auto 1fr;
+  grid-template-rows: 70px auto auto 1fr;
   grid-template-areas: "header" "nav" "dashboard" "main";
 }
 
@@ -217,9 +218,9 @@ header {
 .main-header {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  height: 70px;
 }
 .main-header .headline {
   margin: auto 10px auto 20px;
@@ -228,14 +229,14 @@ header {
 .main-header-search {
   background: rgba(237, 237, 237, 0.9921568627);
   height: 70px;
-  flex-grow: 0.9;
+  flex-grow: 1;
   display: flex;
   align-items: center;
   border-bottom-left-radius: 8px;
   justify-content: flex-end;
 }
 .main-header-search input {
-  margin-right: 10px;
+  margin-right: 15px;
 }
 
 .alert {
@@ -260,11 +261,6 @@ header {
 .settings .user-input-wrapper {
   display: flex;
   flex-direction: column;
-}
-
-.widget-container {
-  margin: 0 10px;
-  padding: 10px;
 }
 
 .form-field,
@@ -340,6 +336,7 @@ nav {
 .trafic-nav {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   margin-right: 15px;
 }
 
@@ -361,6 +358,7 @@ nav {
   padding: 20px;
   margin: 20px;
   background: rgba(237, 237, 237, 0.9921568627);
+  flex-grow: 0.7;
 }
 
 .social-image {
@@ -400,6 +398,7 @@ nav {
   border-bottom: 1px dashed #949494fd;
   padding: 15px 5px;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
 }
 .members-container p {
@@ -408,10 +407,12 @@ nav {
 .members-container a {
   font-size: 1.1rem;
 }
+.members-container .profile-image {
+  margin-right: 15px;
+}
 
 .text-wrapper {
   flex-grow: 1;
-  margin-left: 15px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -428,6 +429,10 @@ nav {
 
 select option {
   line-height: 2;
+}
+
+.button-switch {
+  margin: 5px;
 }
 
 .settings-button {
@@ -461,6 +466,7 @@ select option {
 
   #social-section {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
     margin: auto;
@@ -469,6 +475,7 @@ select option {
   #social-section .section-content {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
   }
 
   .daily,
@@ -484,7 +491,7 @@ select option {
     padding: 20px;
   }
   .widget-container-half .members-container {
-    min-height: 155px;
+    min-height: 220px;
   }
 
   canvas {
@@ -498,6 +505,8 @@ select option {
   }
 
   .settings {
+    display: flex;
+    flex-direction: column;
     justify-content: space-between;
     justify-self: center;
   }
@@ -538,12 +547,8 @@ select option {
     padding: 15px 25px;
   }
 
-  .members-container .text-wrapper {
-    margin-left: 25px;
-  }
-
   .social-container {
-    flex-grow: 1;
+    flex-grow: 0.5;
   }
 
   .social-container div {
